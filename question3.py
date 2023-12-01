@@ -58,8 +58,7 @@ def get_specialist_doctors_list(speciality, salary, connection):
           FROM Doctor                       \
           WHERE Speciality= '{speciality}'  \
           AND Salary > '{salary}';")
-    temp = cursor.fetchall()
-    if temp:
+    if temp := cursor.fetchall():
         print(f"Printing doctors whose specialty \
 is {speciality} and salary greater than {salary} ")
         for item in temp:
